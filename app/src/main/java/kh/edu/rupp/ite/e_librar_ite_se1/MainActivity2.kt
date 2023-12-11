@@ -1,5 +1,6 @@
 package kh.edu.rupp.ite.e_librar_ite_se1
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kh.edu.rupp.ite.e_librar_ite_se1.databinding.ActivityMain2Binding
@@ -10,5 +11,7 @@ class MainActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMain2Binding.inflate(layoutInflater);
         setContentView(binding.root);
+
+
     }
 }
