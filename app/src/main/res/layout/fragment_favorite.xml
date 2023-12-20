@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".FavoriteFragment"
-    android:background="@color/purple_200"
-    >
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Favorite Fragment"
-        android:textSize="39sp"
-        android:layout_gravity="center"
-        />
+    <data>
 
-</FrameLayout>
+        <variable
+            name="viewModel"
+            type="kh.edu.rupp.ite.e_librar_ite_se1.viewmodel.MainViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.FavoriteFragment"
+        android:background="@color/purple_200">
+
+        <!-- TODO: Update blank fragment layout -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Favorite Wa"
+            android:textSize="39sp"
+            android:layout_gravity="center" />
+
+    </FrameLayout>
+</layout>

@@ -1,11 +1,10 @@
-package kh.edu.rupp.ite.e_librar_ite_se1
+package kh.edu.rupp.ite.e_librar_ite_se1.ui
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import kh.edu.rupp.ite.e_librar_ite_se1.R
 import kh.edu.rupp.ite.e_librar_ite_se1.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
