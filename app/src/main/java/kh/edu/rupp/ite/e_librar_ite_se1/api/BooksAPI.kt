@@ -12,6 +12,8 @@ interface BooksAPI{
     suspend fun getBook(
         @Query(value = "q")
         searchQuery : String = "react",
+        @Query(value = "maxResults")
+        maxResults : Int = 20,
         @Query(value ="key")
         apiKey: String = Constants.API_KEY
     ) :BookDataObject

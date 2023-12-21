@@ -8,7 +8,7 @@ data class VolumeInfo(
 //    val categories: List<String>,
 //    val contentVersion: String,
 //    val description: String,
-//    val imageLinks: ImageLinks,
+    val imageLinks: ImageLinks,
 //    val industryIdentifiers: List<IndustryIdentifier>,
 //    val infoLink: String,
 //    val language: String,
