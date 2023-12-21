@@ -7,8 +7,6 @@ import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import kh.edu.rupp.ite.e_librar_ite_se1.adapter.BookListAdapter
-import kh.edu.rupp.ite.e_librar_ite_se1.model.Amphibian
-import kh.edu.rupp.ite.e_librar_ite_se1.model.BookDataObject
 import kh.edu.rupp.ite.e_librar_ite_se1.model.Item
 import kh.edu.rupp.ite.e_librar_ite_se1.viewmodel.BookApiStatus
 
@@ -21,7 +19,7 @@ fun bindImage(imgView: ImageView, imgUrl : String?){
 }
 
 @BindingAdapter("listData")
-    fun bindRecycleView(recyclerView: RecyclerView, data : List<Amphibian>?){
+    fun bindRecycleView(recyclerView: RecyclerView, data : List<Item>?){
         val adapter = recyclerView.adapter as BookListAdapter
         adapter.submitList(data)
 }

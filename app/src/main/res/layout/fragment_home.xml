@@ -37,7 +37,7 @@
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/searchView"
-            app:listData="@{viewModel.books}"
+            app:listData="@{viewModel.books.items}"
             tools:listitem="@layout/home_list_items"
             />
         <ImageView

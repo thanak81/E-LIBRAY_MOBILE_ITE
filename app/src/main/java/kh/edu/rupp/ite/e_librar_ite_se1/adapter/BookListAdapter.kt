@@ -6,16 +6,15 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import kh.edu.rupp.ite.e_librar_ite_se1.databinding.HomeListItemsBinding
-import kh.edu.rupp.ite.e_librar_ite_se1.model.Amphibian
 import kh.edu.rupp.ite.e_librar_ite_se1.model.BookDataObject
 import kh.edu.rupp.ite.e_librar_ite_se1.model.Item
-import kh.edu.rupp.ite.e_librar_ite_se1.model.VolumeInfo
+
 
 class BookListAdapter: ListAdapter<
-        Amphibian,BookListAdapter.BookViewHolder>(DiffCallback) {
+        Item,BookListAdapter.BookViewHolder>(DiffCallback) {
 
     inner class BookViewHolder(var binding: HomeListItemsBinding) : RecyclerView.ViewHolder(binding.root){
-        fun onBind(item : Amphibian){
+        fun onBind(item : Item){
             binding.book = item
             binding.executePendingBindings()
         }
@@ -32,14 +31,13 @@ class BookListAdapter: ListAdapter<
         holder.onBind(book)
     }
 
-    companion object DiffCallback : DiffUtil.ItemCallback<Amphibian>(){
-        override fun areItemsTheSame(oldItem: Amphibian, newItem:Amphibian): Boolean {
-            return oldItem.name == newItem.name
+    companion object DiffCallback : DiffUtil.ItemCallback<Item>(){
+        override fun areItemsTheSame(oldItem:  Item, newItem: Item): Boolean {
+            return oldItem.id== newItem.id
         }
 
-        override fun areContentsTheSame(oldItem:Amphibian, newItem: Amphibian): Boolean {
-//            return oldItem == newItem
-            return oldItem.type == newItem.type && oldItem.description == newItem.description
+        override fun areContentsTheSame(oldItem:Item, newItem:  Item): Boolean {
+            return oldItem== newItem
         }
 
 
