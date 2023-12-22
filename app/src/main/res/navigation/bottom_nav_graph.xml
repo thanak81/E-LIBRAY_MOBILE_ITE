@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="kh.edu.rupp.ite.e_librar_ite_se1.ui.fragment.HomeFragment"
-        android:label="fragment_home"
+        android:label="E-LIBRARY"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_favoriteFragment"
@@ -20,11 +20,15 @@
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="kh.edu.rupp.ite.e_librar_ite_se1.ui.fragment.FavoriteFragment"
-        android:label="fragment_favorite"
+        android:label="Favorites"
         tools:layout="@layout/fragment_favorite" />
     <fragment
         android:id="@+id/bookDetailFragment"
         android:name="kh.edu.rupp.ite.e_librar_ite_se1.ui.fragment.BookDetailFragment"
         android:label="BOOK DETAILS"
-        tools:layout="@layout/fragment_book_detail" />
+        tools:layout="@layout/fragment_book_detail" >
+        <action
+            android:id="@+id/action_bookDetailFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>

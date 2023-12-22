@@ -28,6 +28,8 @@ class BookDetailFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
         binding.bookItem = viewModel
 
+
+
         return binding.root
     }
 
