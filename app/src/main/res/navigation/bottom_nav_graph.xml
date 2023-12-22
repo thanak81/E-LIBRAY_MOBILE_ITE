@@ -13,10 +13,18 @@
         <action
             android:id="@+id/action_homeFragment_to_favoriteFragment"
             app:destination="@id/favoriteFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_bookDetailFragment"
+            app:destination="@id/bookDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="kh.edu.rupp.ite.e_librar_ite_se1.ui.fragment.FavoriteFragment"
         android:label="fragment_favorite"
         tools:layout="@layout/fragment_favorite" />
+    <fragment
+        android:id="@+id/bookDetailFragment"
+        android:name="kh.edu.rupp.ite.e_librar_ite_se1.ui.fragment.BookDetailFragment"
+        android:label="BOOK DETAILS"
+        tools:layout="@layout/fragment_book_detail" />
 </navigation>

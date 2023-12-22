@@ -84,4 +84,6 @@ dependencies {
     kapt 'com.github.bumptech.glide:compiler:4.11.0'
     // Coil
     implementation "io.coil-kt:coil:1.1.1"
+
+
 }

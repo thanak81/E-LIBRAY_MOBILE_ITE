@@ -8,5 +8,5 @@ data class BookDataObject(
     @SerializedName("kind")
     val kind: String,
     @SerializedName("totalItems")
-    val totalItems: Int
+    val totalItems: Int?
 )

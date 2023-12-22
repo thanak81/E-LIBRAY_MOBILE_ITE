@@ -2,20 +2,23 @@ package kh.edu.rupp.ite.e_librar_ite_se1.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ExpandableListView.OnChildClickListener
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import kh.edu.rupp.ite.e_librar_ite_se1.databinding.HomeListItemsBinding
 import kh.edu.rupp.ite.e_librar_ite_se1.model.BookDataObject
 import kh.edu.rupp.ite.e_librar_ite_se1.model.Item
+import kh.edu.rupp.ite.e_librar_ite_se1.viewmodel.MainViewModel
 
 
-class BookListAdapter: ListAdapter<
+class BookListAdapter(val clickListener:BookListener): ListAdapter<
         Item,BookListAdapter.BookViewHolder>(DiffCallback) {
 
     inner class BookViewHolder(var binding: HomeListItemsBinding) : RecyclerView.ViewHolder(binding.root){
-        fun onBind(item : Item){
+        fun onBind(clickListener:BookListener,item : Item){
             binding.book = item
+            binding.clickListener = clickListener
             binding.executePendingBindings()
         }
     }
@@ -28,7 +31,7 @@ class BookListAdapter: ListAdapter<
 
     override fun onBindViewHolder(holder: BookViewHolder, position: Int) {
         val book = getItem(position)
-        holder.onBind(book)
+        holder.onBind(clickListener,book)
     }
 
     companion object DiffCallback : DiffUtil.ItemCallback<Item>(){
@@ -37,9 +40,13 @@ class BookListAdapter: ListAdapter<
         }
 
         override fun areContentsTheSame(oldItem:Item, newItem:  Item): Boolean {
-            return oldItem== newItem
+            return oldItem==newItem
         }
 
 
     }
+}
+
+class BookListener(val clickListener: (bookItem : Item)-> Unit){
+    fun onClick(bookItem:Item) = clickListener(bookItem)
 }

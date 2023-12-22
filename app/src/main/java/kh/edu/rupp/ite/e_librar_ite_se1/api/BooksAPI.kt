@@ -11,7 +11,7 @@ interface BooksAPI{
     @GET("volumes")
     suspend fun getBook(
         @Query(value = "q")
-        searchQuery : String = "react",
+        searchQuery : String = "javascript",
         @Query(value = "maxResults")
         maxResults : Int = 20,
         @Query(value ="key")

@@ -9,12 +9,14 @@
                 name="viewModel"
                 type="kh.edu.rupp.ite.e_librar_ite_se1.viewmodel.MainViewModel" />
     </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:foregroundTint="#852323"
-        android:background="@color/material_dynamic_primary20"
         tools:context=".ui.fragment.HomeFragment">
 
         <!-- TODO: Update blank fragment layout -->
@@ -23,7 +25,6 @@
             android:id="@+id/searchView"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="#FFFFFF"
             android:foregroundTint="#671A1A"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -31,16 +32,18 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
-            android:padding="6dp"
-            app:spanCount="2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="8dp"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/searchView"
+            app:layout_constraintTop_toBottomOf="@id/searchView"
             app:listData="@{viewModel.books.items}"
-            tools:listitem="@layout/home_list_items"
-            />
+            app:spanCount="2" />
+
         <ImageView
             android:id="@+id/status_image"
             android:layout_width="wrap_content"
@@ -52,4 +55,5 @@
             app:bookApiStatus="@{viewModel.myResponse}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>

@@ -7,19 +7,20 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kh.edu.rupp.ite.e_librar_ite_se1.api.RetrofitInstance
 import kh.edu.rupp.ite.e_librar_ite_se1.model.BookDataObject
+import kh.edu.rupp.ite.e_librar_ite_se1.model.Item
 
 import kotlinx.coroutines.launch
 
 
 enum class BookApiStatus {LOADING,DONE,ERROR}
-class MainViewModel():ViewModel() {
+class MainViewModel() :ViewModel() {
 
     private val _myResponse : MutableLiveData<BookApiStatus> = MutableLiveData()
     val myResponse : LiveData<BookApiStatus>
         get() = _myResponse;
 
-//    private val _book : MutableLiveData<Item> = MutableLiveData();
-//     val book : LiveData<Item> get() = _book
+    private val _book : MutableLiveData<Item> = MutableLiveData();
+     val book : LiveData<Item> get() = _book
 
     private val _books : MutableLiveData<BookDataObject> = MutableLiveData();
     val books : LiveData<BookDataObject> get() = _books
@@ -38,5 +39,9 @@ class MainViewModel():ViewModel() {
                 Log.e("MainViewModel","${e.message}")
             }
         }
+    }
+
+    fun onBookItemClicked(book: Item){
+        _book.value = book
     }
 }
