@@ -1,7 +1,9 @@
 package kh.edu.rupp.ite.e_librar_ite_se1
 
+import android.annotation.SuppressLint
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -25,18 +27,22 @@ fun bindImage(imgView: ImageView, imgUrl : String?){
 }
 
 @BindingAdapter("bookApiStatus")
-fun bindStatus(statusImageView: ImageView , status: BookApiStatus){
+fun bindStatus(statusImageView: ImageView, status: BookApiStatus?){
     when(status){
         BookApiStatus.LOADING->{
             statusImageView.visibility = View.VISIBLE
             statusImageView.setImageResource(R.drawable.loading_animation)
         }
         BookApiStatus.DONE->{
-            statusImageView.visibility = View.GONE
-        }
+                statusImageView.visibility = View.GONE}
         BookApiStatus.ERROR->{
             statusImageView.visibility = View.VISIBLE
             statusImageView.setImageResource(R.drawable.ic_connection_error)
+        }
+        else->{
+          BookApiStatus.SEARCH
+            statusImageView.visibility = View.VISIBLE
+            statusImageView.setImageResource(R.drawable.ic_search_foreground)
         }
     }
 }

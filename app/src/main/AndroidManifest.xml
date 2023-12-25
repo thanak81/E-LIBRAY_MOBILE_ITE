@@ -10,7 +10,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="E-LIBRARY"
         android:supportsRtl="true"
-        android:theme="@style/Theme.LIBRARY"
+        android:theme="@style/Theme.ELIBRAR_ITE_SE1"
         tools:targetApi="31">
 
         <activity

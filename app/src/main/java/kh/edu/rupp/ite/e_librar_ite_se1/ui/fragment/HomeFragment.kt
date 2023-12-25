@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
@@ -26,13 +27,28 @@ class HomeFragment : Fragment() {
 
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
+
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(p0: String?): Boolean {
+
+                return true;
+            }
+
+            override fun onQueryTextChange(queryText: String?): Boolean {
+                if (queryText != null) {
+                    viewModel.getBookList(queryText)
+                }
+                return true
+            }
+
+        })
+
         binding.recyclerView.adapter = BookListAdapter(BookListener { bookItem ->
             viewModel.onBookItemClicked(bookItem)
             findNavController()
                 .navigate(R.id.action_homeFragment_to_bookDetailFragment)
         })
 
-        viewModel.getBookList()
         return binding.root
     }
 

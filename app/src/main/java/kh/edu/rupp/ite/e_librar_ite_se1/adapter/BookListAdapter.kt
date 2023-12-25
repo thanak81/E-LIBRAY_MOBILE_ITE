@@ -3,6 +3,8 @@ package kh.edu.rupp.ite.e_librar_ite_se1.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ExpandableListView.OnChildClickListener
+import android.widget.Filter
+import android.widget.Filterable
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -13,7 +15,7 @@ import kh.edu.rupp.ite.e_librar_ite_se1.viewmodel.MainViewModel
 
 
 class BookListAdapter(val clickListener:BookListener): ListAdapter<
-        Item,BookListAdapter.BookViewHolder>(DiffCallback) {
+        Item,BookListAdapter.BookViewHolder>(DiffCallback){
 
     inner class BookViewHolder(var binding: HomeListItemsBinding) : RecyclerView.ViewHolder(binding.root){
         fun onBind(clickListener:BookListener,item : Item){
@@ -45,6 +47,7 @@ class BookListAdapter(val clickListener:BookListener): ListAdapter<
 
 
     }
+
 }
 
 class BookListener(val clickListener: (bookItem : Item)-> Unit){

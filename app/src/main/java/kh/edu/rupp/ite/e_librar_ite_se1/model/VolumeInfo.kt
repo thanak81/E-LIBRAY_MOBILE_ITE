@@ -2,7 +2,7 @@ package kh.edu.rupp.ite.e_librar_ite_se1.model
 
 data class VolumeInfo(
 //    val allowAnonLogging: Boolean,
-    val authors: List<String>,
+    val authors: List<String>?,
 //    val averageRating: Int?,
 //    val canonicalVolumeLink: String,
     val categories: List<String>?,

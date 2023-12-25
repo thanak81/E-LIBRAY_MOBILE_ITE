@@ -11,10 +11,15 @@ interface BooksAPI{
     @GET("volumes")
     suspend fun getBook(
         @Query(value = "q")
-        searchQuery : String = "javascript",
+        searchQuery : String,
         @Query(value = "maxResults")
         maxResults : Int = 20,
         @Query(value ="key")
         apiKey: String = Constants.API_KEY
     ) :BookDataObject
+
+    @GET("volumes")
+    suspend fun searchBook(
+        @Query(value = "q")  searchQuery: String?
+    ) : BookDataObject
 }

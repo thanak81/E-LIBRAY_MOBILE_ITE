@@ -10,9 +10,10 @@ import kh.edu.rupp.ite.e_librar_ite_se1.model.BookDataObject
 import kh.edu.rupp.ite.e_librar_ite_se1.model.Item
 
 import kotlinx.coroutines.launch
+import retrofit2.http.Query
 
 
-enum class BookApiStatus {LOADING,DONE,ERROR}
+enum class BookApiStatus {LOADING,DONE,ERROR,SEARCH}
 class MainViewModel() :ViewModel() {
 
     private val _myResponse : MutableLiveData<BookApiStatus> = MutableLiveData()
@@ -25,12 +26,15 @@ class MainViewModel() :ViewModel() {
     private val _books : MutableLiveData<BookDataObject> = MutableLiveData();
     val books : LiveData<BookDataObject> get() = _books
 
-    fun getBookList(){
+    private val _searchBook : MutableLiveData<BookDataObject> = MutableLiveData()
+    val searchBook : LiveData<BookDataObject> get() = _searchBook
+
+    fun getBookList(query: String){
         viewModelScope.launch {
             _myResponse.value = BookApiStatus.LOADING
             try {
                 Log.d("MainViewModel","${BookApiStatus.DONE}")
-                _books.value = RetrofitInstance.BookApi.api.getBook();
+                _books.value = RetrofitInstance.BookApi.api.getBook(query);
                 _myResponse.value = BookApiStatus.DONE
             }catch (e: java.lang.Exception){
                 e.printStackTrace()
@@ -40,6 +44,12 @@ class MainViewModel() :ViewModel() {
             }
         }
     }
+
+//    fun searchBookList(query: String?){
+//        viewModelScope.launch {
+//            _searchBook.value = RetrofitInstance.BookApi.api.searchBook(query)
+//        }
+//    }
 
     fun onBookItemClicked(book: Item){
         _book.value = book

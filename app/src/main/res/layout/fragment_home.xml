@@ -26,6 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:foregroundTint="#671A1A"
+            android:queryHint="Search Books"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -53,6 +54,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:bookApiStatus="@{viewModel.myResponse}" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
