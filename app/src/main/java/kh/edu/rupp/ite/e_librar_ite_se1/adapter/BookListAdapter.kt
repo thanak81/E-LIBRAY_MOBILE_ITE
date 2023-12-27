@@ -14,7 +14,7 @@ import kh.edu.rupp.ite.e_librar_ite_se1.model.Item
 import kh.edu.rupp.ite.e_librar_ite_se1.viewmodel.MainViewModel
 
 
-class BookListAdapter(val clickListener:BookListener): ListAdapter<
+class BookListAdapter(val clickListener : BookListener): ListAdapter<
         Item,BookListAdapter.BookViewHolder>(DiffCallback){
 
     inner class BookViewHolder(var binding: HomeListItemsBinding) : RecyclerView.ViewHolder(binding.root){
@@ -49,7 +49,6 @@ class BookListAdapter(val clickListener:BookListener): ListAdapter<
     }
 
 }
-
 class BookListener(val clickListener: (bookItem : Item)-> Unit){
     fun onClick(bookItem:Item) = clickListener(bookItem)
 }

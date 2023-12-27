@@ -24,7 +24,6 @@
             android:layout_height="wrap_content"
             android:hint="Book title"
             android:layout_margin="16dp"
-            android:text="@{bookItem.book.volumeInfo.title}"
             android:textAlignment="center"
             android:textSize="26sp"
             android:textStyle="bold"

@@ -28,7 +28,9 @@ class BookDetailFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
         binding.bookItem = viewModel
 
-
+        viewModel.book.observe(viewLifecycleOwner){
+            binding.detailTitle.text = it.volumeInfo.title
+        }
 
         return binding.root
     }

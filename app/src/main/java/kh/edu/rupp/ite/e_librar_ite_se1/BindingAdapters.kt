@@ -39,10 +39,6 @@ fun bindStatus(statusImageView: ImageView, status: BookApiStatus?){
             statusImageView.visibility = View.VISIBLE
             statusImageView.setImageResource(R.drawable.ic_connection_error)
         }
-        else->{
-          BookApiStatus.SEARCH
-            statusImageView.visibility = View.VISIBLE
-            statusImageView.setImageResource(R.drawable.ic_search_foreground)
-        }
+        else -> {}
     }
 }
